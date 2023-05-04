@@ -13,9 +13,7 @@ public class QueueObject
 	
 	public boolean isEmpty()
 	{
-		if (init == null && end == null)
-			return true;
-		return false;
+		return init == null && end == null;
 	}
 	
 	public void insert(Object newData)
@@ -78,25 +76,20 @@ public class QueueObject
 		return size;
 	}
 
-	public Object[] getElements () throws Exception
+	public void list()
 	{
-		int size = size();
-		Object[] elements = new Object[size];
-		if (size > 0 && elements.length == size)
+		if (!isEmpty())
 		{
 			Node node = init;
-		
-			for (int i = 0; i < size; i++)
+
+			while (node != null)
 			{
-				elements[i] = node.data;
+				System.out.println(node.toString());
 				node = node.next;
 			}
 		}
-		else
-			throw new Exception ("vector is empty");
-		return elements;
 	}
-	
+
 	@Override
 	public String toString() 
 	{
