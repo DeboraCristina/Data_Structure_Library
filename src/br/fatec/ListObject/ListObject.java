@@ -49,7 +49,7 @@ public class ListObject implements InterfaceListObject
 	@Override
 	public Object get(int index) throws Exception
 	{
-		Node node = (Node) getNode(index);
+		Node node = getNode(index);
 
 		return node.data;
 	}
@@ -69,7 +69,7 @@ public class ListObject implements InterfaceListObject
 			throw new Exception("Empty List");
 
 		Node newElement = new Node();
-		Node lastNode = (Node) getNode(size() - 1);
+		Node lastNode = getNode(size() - 1);
 		newElement.data = value;
 		lastNode.next = newElement;
 	}
@@ -91,7 +91,7 @@ public class ListObject implements InterfaceListObject
 		else
 		{
 			Node newElement = new Node();
-			Node backNode = (Node) getNode(index-1);
+			Node backNode = getNode(index-1);
 
 			newElement.data = value;
 			newElement.next = backNode.next;
@@ -119,7 +119,7 @@ public class ListObject implements InterfaceListObject
 			removeFirst();
 		else
 		{
-			Node penultimateNode = (Node) getNode(size() - 2);
+			Node penultimateNode = getNode(size() - 2);
 			penultimateNode.next = null;
 		}
 	}
